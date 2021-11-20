@@ -1,0 +1,51 @@
+{
+    "name": "serdud/backpack-files",
+    "description": "Laravel Backpack Files package",
+    "keywords": [
+        "laravel",
+        "backpack",
+        "files",
+        "media"
+    ],
+    "homepage": "https://github.com/serdud/backpack-files",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Dudin",
+            "email": "serdud@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "backpack/crud": "^4.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "Serdud\\BackpackFiles\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Serdud\\BackpackFiles\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Serdud\\BackpackFiles\\BackpackFilesServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
