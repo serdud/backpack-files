@@ -1,5 +1,7 @@
 <?php
 
+namespace Serdud\BackpackFiles\app\Models\Traits;
+
 trait HasFiles
 {
     /**
