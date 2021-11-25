@@ -3,6 +3,7 @@
 namespace Serdud\BackpackFiles\app\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -46,5 +47,22 @@ class File extends Model
         $ids = array_unique($ids);
 
         return !empty($ids) ? static::whereIn('id', $ids)->get() : new Collection;
+    }
+    
+    /**
+     * @param              $query
+     * @param array|string $extensions
+     *
+     * @return Builder
+     */
+    public static function scopeExtensions($query, array|string $extensions): Builder
+    {
+        $extensions = !is_array($extensions) ? [$extensions] : $extensions;
+
+        return $query->where(function ($q) use ($extensions) {
+            foreach ($extensions as $extension) {
+                $q->orWhere('file', 'like', "%.$extension");
+            }
+        });
     }
 }
