@@ -48,7 +48,7 @@ class File extends Model
 
         return !empty($ids) ? static::whereIn('id', $ids)->get() : new Collection;
     }
-    
+
     /**
      * @param              $query
      * @param array|string $extensions

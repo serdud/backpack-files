@@ -2,7 +2,7 @@
 
 return [
     'controller' => [
-        'class' => 'Serdud\BackpackFiles\App\Http\Controllers\Admin\FileCrudController',
+        'class' => 'Serdud\BackpackFiles\app\Http\Controllers\Admin\FileCrudController',
         'create_fields' => [
             [
                 'name' => 'name',
@@ -37,9 +37,9 @@ return [
             'plural' => 'files',
         ],
     ],
-    'model' => 'Serdud\BackpackFiles\App\Models\File',
+    'model' => 'Serdud\BackpackFiles\app\Models\File',
     'request' => [
-        'class' => 'Serdud\BackpackFiles\App\Http\Requests\Admin\FileRequest',
+        'class' => 'Serdud\BackpackFiles\app\Http\Requests\Admin\FileRequest',
         'rules' => [
             'name' => 'required|max:255',
             'file' => 'sometimes|required|mimes:png,mp4,jpeg,svg,gif',
